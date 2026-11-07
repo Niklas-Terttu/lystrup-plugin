@@ -107,11 +107,11 @@ add_shortcode('lystrup_projects', function ($atts) {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_register_style('lystrup-project-cards', false, [], '0.3.0');
+    wp_register_style('lystrup-project-cards', false, [], '0.3.1');
     wp_enqueue_style('lystrup-project-cards');
     wp_add_inline_style('lystrup-project-cards', '
-      .lystrup-project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:24px;margin:24px 0}
-      .lystrup-project-card{overflow:hidden;border:1px solid #dbe5e7;border-radius:17px;background:#fff;box-shadow:0 2px 5px #193b3410;display:flex;flex-direction:column}
+      .lystrup-project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0}
+      @media(max-width:900px){.lystrup-project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}\n      @media(max-width:600px){.lystrup-project-grid{grid-template-columns:minmax(0,1fr)}}\n      .lystrup-project-card{overflow:hidden;border:1px solid #dbe5e7;border-radius:17px;background:#fff;box-shadow:0 2px 5px #193b3410;display:flex;flex-direction:column}
       .lystrup-project-image{height:193px;background:#e5eeee;display:flex;align-items:center;justify-content:center;overflow:hidden}
       .lystrup-project-image img{width:100%;height:100%;object-fit:cover}
       .lystrup-project-placeholder{font-size:58px;color:#006c5b}
