@@ -19,6 +19,7 @@ add_action('admin_menu', function () {
 add_action('admin_post_lystrup_plugin_check_updates', function () {
     if (!current_user_can('update_plugins')) wp_die('Ingen adgang.', '', ['response' => 403]);
     check_admin_referer('lystrup_plugin_check_updates');
+    Lystrup_Release_Updates::clear('lystrup-plugin');
     delete_site_transient('update_plugins');
     wp_update_plugins();
     wp_safe_redirect(add_query_arg('checked', '1', admin_url('tools.php?page=lystrup-plugin-updates')));
