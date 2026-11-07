@@ -121,12 +121,12 @@ add_shortcode('lystrup_activities', static function ($atts) {
 });
 
 add_action('wp_enqueue_scripts', static function () {
-    wp_register_style('lystrup-activity-cards', false, [], '0.4.0');
+    wp_register_style('lystrup-activity-cards', false, [], '0.4.1');
     wp_enqueue_style('lystrup-activity-cards');
     wp_add_inline_style('lystrup-activity-cards', '
-      .lystrup-activities{display:grid;grid-template-columns:1fr;gap:22px;margin:25px auto;max-width:1120px}
-      .lystrup-activity-card{display:grid;grid-template-columns:43% minmax(0,1fr);overflow:hidden;background:#fff;border:1px solid #dce5ee;border-radius:17px;box-shadow:0 5px 14px #182b3b12;color:#15243b}
-      .lystrup-activity-date-panel{background:#f5f8fb;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:9px;padding:28px 30px;border-right:1px solid #dce5ee}
+      .lystrup-activities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin:25px auto;max-width:1120px}
+      .lystrup-activity-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;background:#fff;border:1px solid #dce5ee;border-radius:17px;box-shadow:0 5px 14px #182b3b12;color:#15243b}
+      .lystrup-activity-date-panel{background:#f5f8fb;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:9px;padding:22px 24px;border-bottom:1px solid #dce5ee}
       .lystrup-calendar-icon{color:#008c6c;font-size:23px;line-height:1}
       .lystrup-activity-date-panel strong{font-size:15px}
       .lystrup-activity-date-panel>span:last-child{color:#617494}
@@ -140,6 +140,6 @@ add_action('wp_enqueue_scripts', static function () {
       .lystrup-activity-bottom{border-top:1px solid #e8edf3;margin-top:18px;padding-top:15px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px}
       .lystrup-activity-notice{padding:8px 12px;border-radius:6px;background:#e7fbf2;color:#00865f;font-weight:600}
       .lystrup-activity-registration{color:#4c6283}
-      @media(max-width:650px){.lystrup-activity-card{grid-template-columns:1fr}.lystrup-activity-date-panel{padding:20px 22px;border-right:0;border-bottom:1px solid #dce5ee}.lystrup-activity-main{padding:22px}}
+      @media(max-width:900px){.lystrup-activities{grid-template-columns:repeat(2,minmax(0,1fr))}}\n      @media(max-width:600px){.lystrup-activities{grid-template-columns:minmax(0,1fr)}.lystrup-activity-date-panel,.lystrup-activity-main{padding:20px 22px}}
     ');
 });
