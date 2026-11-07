@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Lystrup Borgerforening
  * Description: Godkendt borgeradgang og bestyrelsesportal for Lystrup.
- * Version: 0.3.1
+ * Version: 0.4.0
  * Update URI: https://github.com/Niklas-Terttu/lystrup-plugin
  * Requires PHP: 8.0
  * Text Domain: lystrup
@@ -150,3 +150,5 @@ require_once __DIR__ . '/includes/update-check.php';
 require_once __DIR__ . '/includes/github-updates.php';
 
 require_once __DIR__ . '/includes/projects.php';
+
+require_once __DIR__ . '/includes/activities.php';
