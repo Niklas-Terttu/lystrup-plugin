@@ -144,3 +144,4 @@ final class Lystrup_Plugin {
 }
 register_activation_hook(__FILE__, ['Lystrup_Plugin', 'roles']);
 Lystrup_Plugin::boot();
+require_once __DIR__ . '/includes/update-check.php';
